@@ -46,7 +46,7 @@ router.post('/signup', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    const {erros, isValid} = validateLoginInput(req.body);
+    const {errors, isValid} = validateLoginInput(req.body);
     if (!isValid) {
         return res.status(400).json(errors);
     }
@@ -83,3 +83,5 @@ router.post('/login', (req, res) => {
         });
     });
 });
+
+module.exports = router;
